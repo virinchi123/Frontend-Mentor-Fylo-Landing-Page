@@ -1,0 +1,114 @@
+$colors:(
+    darksBlue: hsl(243, 87%, 12%),
+    desatBlue: hsl(238, 22%, 44%),
+    brightBlue: hsl(224, 93%, 58%)
+);
+
+@function color($color){
+    @return map-get($colors,$color)
+};
+
+    $raleway: 'Raleway', sans-serif;
+    $openSans:'Open Sans', sans-serif;
+
+body{
+    margin: 0 60px 60px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "logo toolbar"
+        "message1 image1"
+        "message2 image2"
+        "message3 inputfield"
+        "footboi footboi"
+        "credit credit";
+
+    h2{
+        font-family: $raleway;
+        font-weight: 400;
+        color:color(darksBlue)
+    }
+
+    p{
+        font-family: $openSans;
+        font-weight:300;
+        color: color(desatBlue)
+    }
+
+    input{
+        height: 10px;
+        padding: 10px 20px 10px 20px;
+    }
+
+    button{
+        background-color: color(brightBlue);
+        padding: 10px 20px 10px 20px;
+        border: none;
+        box-shadow: 2px 2px 2px #ccc;
+        border-radius: 3px;
+        color: white;
+    }
+}
+
+.message{
+    grid-area: message1;
+}
+
+#img1{
+    grid-area: image1;
+    height: 100%;
+    width: auto;
+}
+
+.message2{
+    grid-area: message2;
+}
+
+#image2{
+    grid-area: image2;
+    height: 100%;
+    width: auto;
+}
+.toolbar{
+    width: auto;
+        grid-area: logo;
+}
+
+.items{
+    ul{
+        grid-area: toolbar;
+        list-style-type: none;
+        display: inline-flex;
+        flex-direction: row-reverse;
+        margin: auto 20px auto 40%;
+        li{
+            margin: auto 20px auto 20px;
+            width: max-content;;
+        }
+    }
+}
+
+.getStarted{
+    grid-area:message3;
+    background-color: color(desatBlue);
+    color: white;
+}
+
+.emailField{
+    grid-area: inputfield;
+    background-color: color(desatBlue);
+    color: white;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+#footer{
+    grid-area: footboi;
+    background-color: color(darksBlue);
+    color: white
+}
+
+footer{
+    grid-area:credit;
+}
