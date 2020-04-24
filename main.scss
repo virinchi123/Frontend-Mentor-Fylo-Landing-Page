@@ -19,14 +19,14 @@ body{
     grid-template-areas: 
         "logo toolbar"
         "message1 image1"
-        "message2 image2"
+        "container container"
         "message3 inputfield"
         "footboi footboi"
         "credit credit";
 
     h2{
         font-family: $raleway;
-        font-weight: 400;
+        font-weight: 700;
         color:color(darksBlue)
     }
 
@@ -53,38 +53,60 @@ body{
 
 .message{
     grid-area: message1;
+    height: 70vh;
+    padding: 20px;
 }
 
 #img1{
     grid-area: image1;
-    height: 100%;
-    width: auto;
+    height: 80%;
+    width: 100%;
 }
 
 .message2{
     grid-area: message2;
+    background-color: rgb(249,248,254)
 }
 
 #image2{
-    grid-area: image2;
     height: 100%;
-    width: auto;
+    width: 100%;
+    padding: auto;
+    //filter: brightness(80%);
+    box-sizing: border-box;
+    grid-area: image2;
+    background-color: rgb(249,248,254);
+
+    img{
+        width:494;
+        height: 385;
+    }
 }
 .toolbar{
     width: auto;
-        grid-area: logo;
+    grid-area: logo;
+    padding: 12px;
+
+    img{
+        margin: 6px auto 6px auto;
+    }
 }
 
 .items{
+    padding: 5px;
+    box-sizing: border-box;
     ul{
         grid-area: toolbar;
+        object-fit: cover;
         list-style-type: none;
         display: inline-flex;
         flex-direction: row-reverse;
-        margin: auto 20px auto 40%;
+        margin: 20px 20px auto 40%;
+
         li{
             margin: auto 20px auto 20px;
-            width: max-content;;
+            width: max-content;
+            font-family: $openSans;
         }
     }
 }
@@ -92,16 +114,37 @@ body{
 .getStarted{
     grid-area:message3;
     background-color: color(desatBlue);
-    color: white;
+    padding:30px;
+
+    h2,p{
+        color: white;
+    }
 }
 
+.container{
+    grid-area:container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "bg bg" 
+        "message2 image2";
+}
+
+.bg{
+    grid-area: bg;
+    background-image: url(/images/bg-curve-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 78px;
+}
 .emailField{
     grid-area: inputfield;
+    padding: 30px;
     background-color: color(desatBlue);
     color: white;
-    margin: auto;
-    height: 100%;
-    width: 100%;
+    margin: 0;
 }
 #footer{
     grid-area: footboi;
@@ -111,4 +154,13 @@ body{
 
 footer{
     grid-area:credit;
+}
+
+#startedButton{
+        background-color: color(brightBlue);
+        padding: 10px 20px 10px 20px;
+        border: none;
+        box-shadow: 2px 2px 2px invert(#ccc);
+        border-radius: 3px;
+        color: white;
 }

@@ -6,12 +6,12 @@ body {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "logo toolbar" "message1 image1" "message2 image2" "message3 inputfield" "footboi footboi" "credit credit";
+      grid-template-areas: "logo toolbar" "message1 image1" "container container" "message3 inputfield" "footboi footboi" "credit credit";
 }
 
 body h2 {
   font-family: "Raleway", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   color: #070439;
 }
 
@@ -40,28 +40,40 @@ body button {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: message1;
+  height: 70vh;
+  padding: 20px;
 }
 
 #img1 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: image1;
-  height: 100%;
-  width: auto;
+  height: 80%;
+  width: 100%;
 }
 
 .message2 {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: message2;
+  background-color: #f9f8fe;
 }
 
 #image2 {
-  -ms-grid-row: 3;
+  height: 100%;
+  width: 100%;
+  padding: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: image2;
-  height: 100%;
-  width: auto;
+  background-color: #f9f8fe;
+}
+
+#image2 img {
+  width: 494;
+  height: 385;
 }
 
 .toolbar {
@@ -69,12 +81,25 @@ body button {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
+  padding: 12px;
+}
+
+.toolbar img {
+  margin: 6px auto 6px auto;
+}
+
+.items {
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .items ul {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: toolbar;
+  -o-object-fit: cover;
+     object-fit: cover;
   list-style-type: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -83,7 +108,7 @@ body button {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  margin: auto 20px auto 40%;
+  margin: 20px 20px auto 40%;
 }
 
 .items ul li {
@@ -91,6 +116,7 @@ body button {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  font-family: "Open Sans", sans-serif;
 }
 
 .getStarted {
@@ -98,18 +124,47 @@ body button {
   -ms-grid-column: 1;
   grid-area: message3;
   background-color: #585989;
+  padding: 30px;
+}
+
+.getStarted h2, .getStarted p {
   color: white;
+}
+
+.container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: container;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "bg bg"  "message2 image2";
+}
+
+.bg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: bg;
+  background-image: url(/images/bg-curve-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 78px;
 }
 
 .emailField {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: inputfield;
+  padding: 30px;
   background-color: #585989;
   color: white;
-  margin: auto;
-  height: 100%;
-  width: 100%;
+  margin: 0;
 }
 
 #footer {
@@ -126,5 +181,15 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: credit;
+}
+
+#startedButton {
+  background-color: #3065f8;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  -webkit-box-shadow: 2px 2px 2px #333333;
+          box-shadow: 2px 2px 2px #333333;
+  border-radius: 3px;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
