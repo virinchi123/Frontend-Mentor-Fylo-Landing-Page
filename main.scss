@@ -12,7 +12,7 @@ $colors:(
     $openSans:'Open Sans', sans-serif;
 
 body{
-    margin: 0 60px 60px 60px;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -21,8 +21,11 @@ body{
         "message1 image1"
         "container container"
         "message3 inputfield"
+        "logoboi logoboi"
         "footboi footboi"
         "credit credit";
+    margin: 0;
+    padding: auto 60px;
 
     h2{
         font-family: $raleway;
@@ -32,12 +35,12 @@ body{
 
     p{
         font-family: $openSans;
-        font-weight:300;
-        color: color(desatBlue)
+        font-weight:400;
+        color: color(darksBlue)
     }
 
     input{
-        height: 10px;
+        height: 13px;
         padding: 10px 20px 10px 20px;
     }
 
@@ -53,19 +56,79 @@ body{
 
 .message{
     grid-area: message1;
-    height: 70vh;
-    padding: 20px;
+    height: 40vh;
+    padding: 200px 20px 50px;
+
+    input{
+        border-radius: 2px;
+        border: 1px solid #ccc;
+    }
+}
+
+.card{
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px invert(#ccc);
+    width: 300px;
+    padding: 30px;
+    margin: auto auto 10px 10px;
+    
+    p{
+        font-weight: 500;
+        
+    }
+
+    .name{
+        font-weight: bolder;
+        font-family: $raleway;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .chamcha{
+        display: inline;
+    }
+    .title{
+        font-size: 10px;
+        margin: 3px 0 3px 0;
+
+    }
+
+    #profile{
+        display: flex;
+        border-radius: 50%;
+        zoom: 25%;
+        margin:auto 20px auto auto;
+    }
+
+    .testimonial{
+        display: inline-flex;
+    }
+
+
 }
 
 #img1{
     grid-area: image1;
-    height: 80%;
-    width: 100%;
+    height: 382px;
+    width: 554px;
+    padding:200px auto 50px;
 }
 
 .message2{
     grid-area: message2;
-    background-color: rgb(249,248,254)
+    background-color: rgb(249,248,254);
+    padding: 30px;
+    #seeHow{
+        text-decoration: underline solid hsl(170, 45%, 43%);
+        color: hsl(170, 45%, 43%);
+
+        &:after{
+            content: url("/images/icon-arrow.svg");
+            zoom: 130%;
+            margin:20px 0 0 0;
+        }
+    }
 }
 
 #image2{
@@ -114,7 +177,8 @@ body{
 .getStarted{
     grid-area:message3;
     background-color: color(desatBlue);
-    padding:30px;
+    padding:20px 180px 10px 100px;
+    font-size: 14px;
 
     h2,p{
         color: white;
@@ -135,7 +199,7 @@ body{
     grid-area: bg;
     background-image: url(/images/bg-curve-desktop.svg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: fill;
     width: 100%;
     height: 78px;
 }
@@ -145,15 +209,78 @@ body{
     background-color: color(desatBlue);
     color: white;
     margin: 0;
-}
-#footer{
-    grid-area: footboi;
-    background-color: color(darksBlue);
-    color: white
+    padding: 60px;
+
+    input{
+        display: block;
+        margin:5px;
+        width: 70%;
+    }
+
+    button{
+        margin: 5px;
+    }
+
 }
 
-footer{
-    grid-area:credit;
+.footer{
+    grid-area: footboi;
+    background-color: color(darksBlue);
+    color: white;
+    padding: 0 30px 30px 30px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "fylo about contact";
+    
+    color: white;
+
+
+    .column{
+
+        text-align: center;
+        padding: 30px;
+        width: 70%;
+        p{
+            color: white;
+            width: fit-content;
+        }
+
+        .Point{
+            display: block;
+        }
+
+    }
+
+    #col1{
+        grid-area: fylo;
+        display: inline-block;
+
+        p{
+            display: inline-block;
+            padding: 6px;
+        }
+    }
+
+    #col2{
+        grid-area: about;
+    }
+
+    #col3{
+        grid-area: contact;
+    }
+}
+
+.placeholder{
+    width: 100%;
+    background-color: color(darksBlue);
+    grid-area: logoboi;
+    overflow: none;
+    padding: auto 80% 10px 10%;
+
+    img{
+        filter: brightness(0%) invert(1);
+    }
 }
 
 #startedButton{
