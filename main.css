@@ -345,4 +345,14 @@ body button {
 .attribution a {
   color: #3e52a3;
 }
+
+@media (max-width: 376px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 80%;
+        grid-template-columns: 80%;
+        grid-template-areas: "logo toolbar"  "image1 image1" "message1 message1" "container container" "image2 image2" "message2 message2" "message3 message3" "inputfield inputfield" "logoboi logoboi" "footboi footboi" "credit credit";
+  }
+}
 /*# sourceMappingURL=main.css.map */
